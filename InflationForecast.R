@@ -34,7 +34,7 @@ suppressWarnings(suppressMessages({
   library(fbi)
   library(utils)
   library(imputeTS)
-  
+
 }))
 
 ################################################################################
@@ -184,11 +184,9 @@ fredmd <- function(file = "", date_start = NULL, date_end = NULL, transform = TR
   return(outdata)
 }
 
-# Set the working directory to the folder containing the data file
-setwd("~/Desktop/Scrivania - MacBook Air di Alessandro/Unibo/EPOS 2023: 2024/BIG DATA APPLICATIONS/DATA/US")
-
-# Define the path to your data file
-file_path <- "current.csv"
+# Set wd and load dataset
+file_path <- "./current.csv"
+dataset <- read.csv(file_path)
 
 # Load transformed data
 transformed_data <- fredmd(file = file_path, transform = TRUE)
@@ -2246,3 +2244,4 @@ actual_vs_predicted_plot <- ggplot(df_test, aes(x = Date)) +
 
 # Save the plot as a high-resolution PDF
 ggsave("actual_vs_predicted_values_pcr_all_pcs.pdf", plot = actual_vs_predicted_plot, width = 10, height = 8, dpi = 300, units = "in")
+
