@@ -20,4 +20,4 @@ InflationForecast.R: The R script that includes the full analysis.
 
 InflationForecastReport.pdf: A detailed report explaining the results, visualizations, and model comparisons.
 
-current.csv: Dataset used in the analysis, US monthly macroeconomic indicators from the Federal Reserve website.
+current.csv: Dataset used in the analysis, consisting in US monthly macroeconomic indicators from the Federal Reserve.
