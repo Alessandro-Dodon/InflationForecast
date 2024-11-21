@@ -1,16 +1,4 @@
 ################################################################################
-# Lag Selection
-################################################################################
-
-# Select optimal lag using information criteria
-lag_selection <- VARselect(current_train_matrix, lag.max = 10, type = "const")  # Test up to 10 lags
-print(lag_selection$criteria)  # View AIC, BIC, etc.
-
-# Use the lag with the lowest AIC or BIC
-optimal_lag <- lag_selection$selection["AIC(n)"]  # Replace "AIC(n)" with "BIC(n)" if you prefer BIC
-cat("Optimal lag selected:", optimal_lag, "\n")
-
-################################################################################
 # Recursive Rolling VAR using all variables
 ################################################################################
 
@@ -44,7 +32,7 @@ for (i in 1:n_test) {
   colnames(current_train_matrix) <- c("Y_train_vec", colnames(X_train_matrix))
   
   # Fit the VAR model on the current training data
-  var_model <- VAR(current_train_matrix, p = optimal_lag, type = "const")  # select p
+  var_model <- VAR(current_train_matrix, p = 1, type = "const")  # select p
   
   # Use the VAR model to forecast the next value
   forecast_result <- predict(var_model, n.ahead = 1)
@@ -115,6 +103,18 @@ actual_vs_predicted_plot <- ggplot(df_test, aes(x = Date)) +
 # Save the plot as a high-resolution PDF
 ggsave("actual_vs_predicted_values_var_model.pdf", plot = actual_vs_predicted_plot, width = 10, height = 8, dpi = 300, units = "in")
 
+###############################################################################
+# Lag Selection
+################################################################################
+
+# Select optimal lag using information criteria
+lag_selection <- VARselect(current_train_matrix, lag.max = 12, type = "const")  # Test up to 12 lags
+print(lag_selection$criteria)  # View AIC, BIC, etc.
+
+# Use the lag with the lowest AIC or BIC
+optimal_lag <- lag_selection$selection["AIC(n)"]  # Replace "AIC(n)" with "BIC(n)" if you prefer BIC
+cat("Optimal lag selected:", optimal_lag, "\n")
+
 ################################################################################
 # VAR with Recursive Rolling and PCA
 ################################################################################
@@ -125,7 +125,7 @@ pca_model <- prcomp(X_train_matrix, center = TRUE, scale. = TRUE)
 # Retain the first 30 PCs
 num_pcs <- 30
 X_train_pcs <- pca_model$x[, 1:num_pcs]  # Training data in the PC space
-X_test_pcs <- as.matrix(X_test_matrix) %*% pca_model$rotation[, 1:num_pcs]  # Test data in PC space
+X_test_pcs <- scale(X_test_matrix, center = pca_model$center, scale = pca_model$scale) %*% pca_model$rotation[, 1:num_pcs]
 
 # Initialize the training data matrix
 current_train_matrix <- cbind(Y_train_vec, X_train_pcs)
@@ -138,7 +138,7 @@ predictions <- numeric(n_test)
 # Step 2: Recursive Rolling VAR
 for (i in 1:n_test) {
   # Fit VAR model on the current training matrix
-  var_model <- VAR(current_train_matrix, p = optimal_lag, type = "const")  # Use optimal lag
+  var_model <- VAR(current_train_matrix, p = 1, type = "const")  # Select p
   
   # Forecast the next value
   forecast_result <- predict(var_model, n.ahead = 1)
@@ -211,4 +211,16 @@ actual_vs_predicted_plot <- ggplot(df_test, aes(x = Date)) +
 
 # Save the plot as a high-resolution PDF
 ggsave("actual_vs_predicted_values_var_pca_model.pdf", plot = actual_vs_predicted_plot, width = 10, height = 8, dpi = 300, units = "in")
+
+###############################################################################
+# Lag Selection
+################################################################################
+
+# Select optimal lag using information criteria
+lag_selection <- VARselect(current_train_matrix, lag.max = 12, type = "const")  # Test up to 12 lags
+print(lag_selection$criteria)  # View AIC, BIC, etc.
+
+# Use the lag with the lowest AIC or BIC
+optimal_lag <- lag_selection$selection["AIC(n)"]  # Replace "AIC(n)" with "BIC(n)" if you prefer BIC
+cat("Optimal lag selected:", optimal_lag, "\n")
 
