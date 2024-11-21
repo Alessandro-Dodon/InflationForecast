@@ -301,3 +301,4 @@ cat(lag_selection$selection["SC(n)"], "\n")
 
 cat("Optimal lags based on HQC:\n")
 cat(lag_selection$selection["HQ(n)"], "\n")
+
