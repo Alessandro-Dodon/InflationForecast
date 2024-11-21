@@ -22,7 +22,13 @@ Random Forest (RF): A machine learning technique that captures complex, non-line
 
 PreProcessing.R: Handles data preparation, including addressing autocorrelation issues, plotting time series graphs, removing missing values, and other essential preprocessing steps.
 
-InflationForecast.R: Conducts the primary analysis using methods such as AR(1), Lasso, Ridge, and Principal Component Regression (PCR).
+AR1.R: Uses the AR(1) model, a baseline gold standard, as the benchmark for evaluating more complex models.
+
+Lasso.R: Implements Lasso regression with regularization tuned through experimentation and inspired by referenced research.
+
+Ridge.R: Applies Ridge regression to tackle multicollinearity, with parameters guided by insights from research papers.
+
+PCR.R: Performs Principal Component Regression (PCR), experimenting with different numbers of PCs to optimize performance.
 
 VAR.R: Implements Vector Autoregression (VAR) models, including an application of PCA to address multicollinearity issues effectively.
 
@@ -31,3 +37,5 @@ RandomForest.R: Explores the use of Random Forests to capture non-linear relatio
 InflationForecastReport.pdf: A detailed report explaining the results, visualizations, and model comparisons.
 
 current.csv: Dataset used in the analysis, consisting in US monthly macroeconomic indicators from the Federal Reserve.
+
+Papers: Contains two research papers that inspired and guided the project’s methodology and experimentation.
