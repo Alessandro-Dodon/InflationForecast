@@ -20,13 +20,13 @@ Random Forest (RF): A machine learning technique that captures complex, non-line
 
 ## Files
 
-PreProcessing.R: The R script that covers the autocorrelation issues, prints time series graphs, removes missing values and more.
+PreProcessing.R: Handles data preparation, including addressing autocorrelation issues, plotting time series graphs, removing missing values, and other essential preprocessing steps.
 
-InflationForecast.R: The R script that includes most of the analysis (AR, lasso, ridge, PCR).
+InflationForecast.R: Conducts the primary analysis using methods such as AR(1), Lasso, Ridge, and Principal Component Regression (PCR).
 
-VAR.R: Includes the VAR and an application with PCA to handle multicollinearity issues.
+VAR.R: Implements Vector Autoregression (VAR) models, including an application of PCA to address multicollinearity issues effectively.
 
-RF.R: Experimentation with random forests to capture non linear relations.
+RF.R: Explores the use of Random Forests to capture non-linear relationships in the data.
 
 InflationForecastReport.pdf: A detailed report explaining the results, visualizations, and model comparisons.
 
