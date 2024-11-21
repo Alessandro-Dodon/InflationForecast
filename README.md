@@ -1,6 +1,6 @@
 # Inflation Forecasting Project
 
-This group project focuses on forecasting inflation using various time series techniques. The dataset is sourced from the Federal Reserve Bank of St. Louis and includes key economic indicators used for modeling inflation rates.
+This updated group project focuses on forecasting inflation using various time series techniques. The dataset is sourced from the Federal Reserve Bank of St. Louis and includes key economic indicators used for modeling inflation rates.
 
 ## Methodology
 
@@ -14,9 +14,15 @@ Ridge Regression: Similar to Lasso but handles multicollinearity differently by 
 
 Principal Component Regression (PCR): Reducing dimensionality in the dataset and using principal components for forecasting.
 
+Vector Autoregression (VAR): A multivariate time series model to capture relationships between inflation and macroeconomic indicators.
+
+Random Forest (RF): A machine learning technique that captures complex, non-linear patterns for forecasting.
+
 ## Files
 
-InflationForecast.R: The R script that includes the full analysis.
+PreProcessing.R: The R script that covers the autocorrelation issues, prints time series graphs, removes missing values and more.
+
+
 
 InflationForecastReport.pdf: A detailed report explaining the results, visualizations, and model comparisons.
 
