@@ -37,5 +37,3 @@ RandomForest.R: Explores the use of Random Forests to capture non-linear relatio
 InflationForecastReport.pdf: A detailed report explaining the results, visualizations, and model comparisons.
 
 current.csv: Dataset used in the analysis, consisting in US monthly macroeconomic indicators from the Federal Reserve.
-
-Papers: Contains two research papers that inspired and guided the project’s methodology and experimentation.
