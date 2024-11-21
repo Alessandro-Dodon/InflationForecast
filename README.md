@@ -26,7 +26,7 @@ InflationForecast.R: Conducts the primary analysis using methods such as AR(1), 
 
 VAR.R: Implements Vector Autoregression (VAR) models, including an application of PCA to address multicollinearity issues effectively.
 
-RF.R: Explores the use of Random Forests to capture non-linear relationships in the data.
+RandomForest.R: Explores the use of Random Forests to capture non-linear relationships in the data.
 
 InflationForecastReport.pdf: A detailed report explaining the results, visualizations, and model comparisons.
 
