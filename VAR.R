@@ -44,7 +44,7 @@ for (i in 1:n_test) {
   colnames(current_train_matrix) <- c("Y_train_vec", colnames(X_train_matrix))
   
   # Fit the VAR model on the current training data
-  var_model <- VAR(current_train_matrix, p = 1, type = "const")  # p = 1 (lag order)
+  var_model <- VAR(current_train_matrix, p = optimal_lag, type = "const")  # select p
   
   # Use the VAR model to forecast the next value
   forecast_result <- predict(var_model, n.ahead = 1)
@@ -211,3 +211,4 @@ actual_vs_predicted_plot <- ggplot(df_test, aes(x = Date)) +
 
 # Save the plot as a high-resolution PDF
 ggsave("actual_vs_predicted_values_var_pca_model.pdf", plot = actual_vs_predicted_plot, width = 10, height = 8, dpi = 300, units = "in")
+
