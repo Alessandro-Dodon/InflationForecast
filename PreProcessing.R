@@ -221,6 +221,16 @@ data(fredmd_description) # Click on fredmd_description <Promise> on the Environm
 print(fredmd_description)
 
 ################################################################################
+# View variable of interest "CPIULFSL"
+################################################################################
+
+# Extract the full column for CPIULFSL
+cpi_column <- dataset$CPIULFSL
+
+# View the first few values to verify
+head(cpi_column)
+
+################################################################################
 # Plotting before and after each time series
 ################################################################################
 

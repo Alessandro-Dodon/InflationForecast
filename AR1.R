@@ -1,5 +1,5 @@
 ################################################################################
-# Recursive Rolling OLS using only the past values as predictors
+# Recursive OLS using only the past values as predictors
 ################################################################################
 
 # Initial shifting for training data
