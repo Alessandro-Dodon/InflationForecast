@@ -497,3 +497,4 @@ actual_vs_predicted_plot <- ggplot(df_test, aes(x = Date)) +
 
 # Save the plot as a high-resolution PDF
 ggsave("actual_vs_predicted_values_lasso_lambda_001.pdf", plot = actual_vs_predicted_plot, width = 10, height = 8, dpi = 300, units = "in")
+

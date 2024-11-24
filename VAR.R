@@ -9,9 +9,10 @@ CPIULFSL_train <- train_data_holdout[, "CPIULFSL"]
 # Take first value out to shift every observation
 Y_train <- CPIULFSL_train[-1] # Y for VAR 
 
-# Modify also the matrix for the training data (this took out the last value, so it is symmetric and represents the "past" values)
-train_data_holdout_no_date <- train_data_holdout[,-1]
-X_train_matrix <- head(train_data_holdout_no_date, -1)
+# Modify the matrix for training data (removing date and CPIULFSL columns)
+train_data_holdout_no_date <- train_data_holdout[,-1]  # Remove date column
+X_train_matrix <- train_data_holdout_no_date[,-which(colnames(train_data_holdout_no_date) == "CPIULFSL")]  # Remove CPIULFSL column
+X_train_matrix <- head(X_train_matrix, -1)  # Adjust for shifting
 
 # Initialize vectors with the original training data
 Y_train_vec <- as.numeric(Y_train)
@@ -23,7 +24,8 @@ CPIULFSL_test <- test_data_holdout[, "CPIULFSL"]
 Y_test <- CPIULFSL_test[-1]  # Future values for test set
 
 test_data_holdout_no_date <- test_data_holdout[,-1]
-X_test_matrix <- head(test_data_holdout_no_date, -1)
+X_test_matrix <- test_data_holdout_no_date[,-which(colnames(test_data_holdout_no_date) == "CPIULFSL")]
+X_test_matrix <- head(X_test_matrix, -1)
 
 # Convert to numeric and matrix format
 Y_test_vec <- as.numeric(Y_test)
@@ -122,6 +124,7 @@ actual_vs_predicted_plot <- ggplot(df_test, aes(x = Date)) +
 
 # Save the plot as a high-resolution PDF
 ggsave("actual_vs_predicted_values_var_all_predictors.pdf", plot = actual_vs_predicted_plot, width = 10, height = 8, dpi = 300, units = "in")
+
 
 ################################################################################
 # Determine the Optimal Lag Order for VAR
