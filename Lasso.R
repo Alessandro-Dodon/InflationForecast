@@ -488,7 +488,7 @@ df_test <- data.frame(Date = test_data_holdout$date[-1][1:n_test],
 actual_vs_predicted_plot <- ggplot(df_test, aes(x = Date)) +
   geom_line(aes(y = Actual, color = "Actual")) +
   geom_line(aes(y = Predicted, color = "Predicted")) +
-  labs(title = "Actual vs Predicted Values for Lasso Regression with Lambda = 0.01",
+  labs(title = "Actual vs Predicted Values for Lasso Model with Lambda = 0.01",
        x = "Date",
        y = "CPIULFSL",
        color = "Legend") +

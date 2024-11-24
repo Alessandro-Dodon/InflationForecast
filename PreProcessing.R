@@ -14,6 +14,8 @@
 #install.packages("forecast")
 #install.packages("dplyr")
 #install.packages("glmnet")
+#install.packages("randomForest")
+#install.packages("vars")
 
 # Install fbi package from github
 #devtools::install_github("cykbennie/fbi")
@@ -531,18 +533,22 @@ ggplot(correlation_long, aes(Variable1, Variable2, fill = Correlation)) +
   geom_tile(color = "white") +
   scale_fill_viridis(option = "plasma", direction = -1, limits = c(-1, 1)) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
         axis.title = element_blank()) +
   labs(title = "Correlation Matrix Heatmap (standardized)")
 
-# Create the heatmap plot
+# Create the heatmap plot for the Covariance Matrix
 cov_heatmap <- ggplot(covariance_long, aes(Variable1, Variable2, fill = Covariance)) +
   geom_tile(color = "white") +
   scale_fill_viridis(option = "plasma", direction = -1) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks = element_blank(),
         axis.title = element_blank()) +
-  labs(title = "Covariance Matrix Heatmap (standardized)")
+  labs(title = "Covariance Matrix Heatmap of FRED_MD Dataset (Standardized)")
 
 # Save the plot as a high-resolution PDF
 ggsave("covariance_matrix_heatmap.pdf", plot = cov_heatmap, width = 10, height = 8, dpi = 300, units = "in")
@@ -621,11 +627,11 @@ scree_plot <- ggplot(data.frame(Eigenvalues_ratios = eigen_cov_difference, Compo
                      aes(x = Component, y = Eigenvalues_ratios)) +
   geom_line() +
   geom_point() +
-  labs(title = "Scree Plot of Eigenvalues' Ratios (Covariance Matrix)", x = "Component", y = "Eigenvalues Ratios") +
+  labs(title = "Eigenvalues' Ratios (Covariance Matrix)", x = "Component", y = "Eigenvalues Ratios") +
   theme_minimal()
 
 # Save the plot as a high-resolution PDF
-ggsave("scree_plot_eigenvalues_ratios.pdf", plot = scree_plot, width = 10, height = 8, dpi = 300, units = "in")
+ggsave("plot_eigenvalues_ratios.pdf", plot = scree_plot, width = 10, height = 8, dpi = 300, units = "in")
 
 ################################################################################
 # Take COVID-19 years out

@@ -299,7 +299,7 @@ df_test <- data.frame(Date = test_data_holdout$date[1:n_test],
 actual_vs_predicted_plot <- ggplot(df_test, aes(x = Date)) +
   geom_line(aes(y = Actual, color = "Actual")) +
   geom_line(aes(y = Predicted, color = "Predicted")) +
-  labs(title = "Actual vs Predicted Values for Recursive RF Model (All Predictors)",
+  labs(title = "Actual vs Predicted Values for RF Model with All Predictors and 500 Trees",
        x = "Date",
        y = "CPIULFSL",
        color = "Legend") +
