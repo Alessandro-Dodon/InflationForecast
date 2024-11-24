@@ -34,6 +34,6 @@ VAR.R: Implements Vector Autoregression (VAR) models, including an application o
 
 RandomForest.R: Explores the use of Random Forests to capture non-linear relationships in the data.
 
-InflationForecastReport.pdf: A detailed report explaining the results, visualizations, and model comparisons.
+Report.pdf: A detailed report explaining the results, visualizations, and model comparisons.
 
 current.csv: Dataset used in the analysis, consisting in US monthly macroeconomic indicators from the Federal Reserve.
