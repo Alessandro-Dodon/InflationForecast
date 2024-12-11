@@ -20,6 +20,8 @@ Random Forest (RF): A machine learning technique that captures complex, non-line
 
 ## Files
 
+**NOTE**: For best results, start with the PreProcessing.R file, as the other scripts assume the data has already been pre-processed.
+
 PreProcessing.R: Handles data preparation, including addressing autocorrelation issues, plotting time series graphs, removing missing values, and other essential preprocessing steps.
 
 AR1.R: Uses the AR(1) model, a baseline gold standard, as the benchmark for evaluating more complex models.
