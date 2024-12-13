@@ -1,4 +1,4 @@
-# Inflation Forecasting Project
+# Inflation Forecasting with Regression Techniques and ML
 
 This updated university group project focuses on forecasting inflation using various time series techniques. The dataset is sourced from the Federal Reserve Bank of St. Louis and includes key economic indicators used for modeling inflation rates.
 
