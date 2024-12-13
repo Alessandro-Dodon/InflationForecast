@@ -32,13 +32,13 @@ The analysis covers multiple forecasting models, with a focus on both traditiona
 - Implements Lasso regression with regularization parameters tuned through experimentation and research insights.
 
 ### `Ridge.R`
-- Applies Ridge regression to handle multicollinearity, with parameters guided by research insights.
+- Applies Ridge regression with a similar approach used in the Lasso regression.
 
 ### `PCR.R`
 - Performs Principal Component Regression (PCR), optimizing performance by experimenting with different numbers of PCs.
 
 ### `VAR.R`
-- Implements Vector Autoregression (VAR) models, using PCA to address multicollinearity issues.
+- Implements Vector Autoregression (VAR) models, also combined with PCA to address multicollinearity issues.
 
 ### `RandomForest.R`
 - Explores Random Forests to capture non-linear relationships in the data.
