@@ -47,5 +47,4 @@ The analysis covers multiple forecasting models, with a focus on both traditiona
 - Detailed report covering results, visualizations, and model comparisons.
 
 ### `current.csv`
-- Dataset of US monthly macroeconomic indicators from the Federal Reserve used in the analysis.
-
+- Dataset of US monthly macroeconomic indicators from the Federal Reserve used in the analysis. Also available at https://www.stlouisfed.org/research/economists/mccracken/fred-databases.
