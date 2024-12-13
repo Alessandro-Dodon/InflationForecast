@@ -29,7 +29,7 @@ The analysis covers multiple forecasting models, with a focus on both traditiona
 - Uses the AR(1) model as a benchmark for evaluating more complex models.
 
 ### `Lasso.R`
-- Implements Lasso regression with regularization parameters tuned through experimentation and research.
+- Implements Lasso regression with regularization parameters tuned through experimentation and research insights.
 
 ### `Ridge.R`
 - Applies Ridge regression to handle multicollinearity, with parameters guided by research insights.
