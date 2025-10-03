@@ -40,6 +40,7 @@
 #install.packages("vars")
 #install.packages("pls")
 #install.packages("pheatmap")
+#install.packages("tidyverse")
 
 # Install fbi package from github
 #devtools::install_github("cykbennie/fbi") 
